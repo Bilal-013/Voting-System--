@@ -79,6 +79,18 @@ public:
 		
 	}
 
+	void remove_user() {
+
+	}
+
+	void add_cand() {
+
+	}
+
+	void remove_cand() {
+		
+	}
+
 
 };
 
