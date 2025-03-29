@@ -1,3 +1,4 @@
+//hi I can edit this
 #include<iostream>
 #include<string>
 #include<fstream>
@@ -53,7 +54,16 @@ public:
 		cin >> x;
 		switch(x) {
 			case 1:
-				cout << "Registering user\n";
+				int y;
+				cout << "Add: \n1. User. \n2. Condidate.";
+				cin >> y;
+				if(y == 1) {
+					add_user();
+				}
+				else if(y == 2) {
+					add_cand();
+				}
+				else cerr << "Enter a valid option...\n";
 				break;
 			
 			case 2:
@@ -76,7 +86,31 @@ public:
 	}
 
 	void add_user() {
-		
+		reg_user.open("user_cr.txt", ios::app);
+		if (!reg_user.is_open()) {
+			cerr << "Unable to open user file for writing.\n";
+			break;
+		}
+
+		string new_username, new_password, NIC, region;
+		int age;
+		cout << "Enter new user's username: ";
+		cin >> new_username;
+		cout << "Enter new user's password: ";
+		cin >> new_password;
+		cout << "Enter user's CNIC: ";
+		cin >> NIC;
+		cout << "Enter user's region: ";
+		cin >> region;
+		cout << "Enter user's age: ";
+		cin >> age;
+		if(age >= 18) {
+			reg_user << new_username << "*" << new_password << "*" << NIC << "*" << region << "*" << age << "\n";
+			cout << "User added successfully!\n";
+		}
+		else cout << "User's age has to be above 18 for registeration....\n";
+
+		reg_user.close();
 	}
 
 	void remove_user() {
@@ -84,6 +118,29 @@ public:
 	}
 
 	void add_cand() {
+		reg_cand.open("candidate_cr.txt", ios :: app);
+		if(!reg_cand.is_open()) {
+			cerr << "Unable to open file...\n";
+			break;
+		}
+
+		string c_usr, c_pass, c_NIC, parties;
+		int c_age;
+		cout << "Enter new candidate's username: ";
+		cin >> c_usr;
+		cout << "Enter new candidate's password: ";
+		cin >> c_pass;
+		cout << "Enter candidate's CNIC: ";
+		cin >> c_NIC;
+		cout << "Enter parties the candidate can join: ";
+		cin >> parties;
+		cout << "Enter candidates age: ";
+		cin >> c_age;
+		if(c_age >= 18) {
+			reg_cand << c_usr << "*" << c_pass << "*" << c_NIC << "*" << parties << "*" << age << endl;
+			cout << "Candidate added successfully!\n";
+		}
+		else cout << "Candidate's age has to be above 18 for registeration....\n";
 
 	}
 
