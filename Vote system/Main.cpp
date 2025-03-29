@@ -1,4 +1,3 @@
-//hi I can edit this
 #include<iostream>
 #include<string>
 #include<fstream>
@@ -89,7 +88,7 @@ public:
 		reg_user.open("user_cr.txt", ios::app);
 		if (!reg_user.is_open()) {
 			cerr << "Unable to open user file for writing.\n";
-			break;
+			return;
 		}
 
 		string new_username, new_password, NIC, region;
@@ -121,7 +120,7 @@ public:
 		reg_cand.open("candidate_cr.txt", ios :: app);
 		if(!reg_cand.is_open()) {
 			cerr << "Unable to open file...\n";
-			break;
+			return;
 		}
 
 		string c_usr, c_pass, c_NIC, parties;
@@ -137,7 +136,7 @@ public:
 		cout << "Enter candidates age: ";
 		cin >> c_age;
 		if(c_age >= 18) {
-			reg_cand << c_usr << "*" << c_pass << "*" << c_NIC << "*" << parties << "*" << age << endl;
+			reg_cand << c_usr << "*" << c_pass << "*" << c_NIC << "*" << parties << "*" << c_age << endl;
 			cout << "Candidate added successfully!\n";
 		}
 		else cout << "Candidate's age has to be above 18 for registeration....\n";
