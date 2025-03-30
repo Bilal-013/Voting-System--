@@ -31,10 +31,12 @@ public:
 		}
 
 		if (validate_admin()) {
+			system("cls");
 			cout << "\nWelcome Mr.Admin!\n\n";
 			admin_options();
 		}
 		else {
+			system("cls");
 			cout << "Invalid username or password!\nPlease try again...\n";
 		}
 
@@ -54,7 +56,7 @@ public:
 		switch(x) {
 			case 1:
 				int y;
-				cout << "Add: \n1. User. \n2. Condidate.";
+				cout << "Add: \n1. User. \n2. Condidate. \n";
 				cin >> y;
 				if(y == 1) {
 					add_user();
@@ -85,6 +87,7 @@ public:
 	}
 
 	void add_user() {
+		system("cls");
 		reg_user.open("user_cr.txt", ios::app);
 		if (!reg_user.is_open()) {
 			cerr << "Unable to open user file for writing.\n";
@@ -113,10 +116,13 @@ public:
 	}
 
 	void remove_user() {
+		
+
 
 	}
 
 	void add_cand() {
+		system("cls");
 		reg_cand.open("candidate_cr.txt", ios :: app);
 		if(!reg_cand.is_open()) {
 			cerr << "Unable to open file...\n";
