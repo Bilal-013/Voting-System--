@@ -1,4 +1,4 @@
-#include"user.cpp"
+#include"../header/voter.h"
 
 class Voter: public User {
 private:

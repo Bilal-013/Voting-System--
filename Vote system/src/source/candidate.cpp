@@ -1,4 +1,4 @@
-#include"user.cpp"
+#include"../header/candidate.h"
 #include<fstream>
 
 class Candidate: public User {
@@ -69,3 +69,5 @@ public:
 	}
 
 };
+
+

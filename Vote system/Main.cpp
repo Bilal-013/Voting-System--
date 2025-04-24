@@ -1,7 +1,7 @@
-#include"user.cpp"
-#include"candidate.cpp"
-#include"admin.cpp"
-#include"voter.cpp"
+#include"../src/header/user.h"
+#include"../src/header/candidate.h"
+#include"../src/header/admin.h"
+#include"../src/header/voter.h"
 
 
 int main() {
@@ -13,19 +13,20 @@ int main() {
 	string a, b;
 	
 	switch(var) {
-
 		case 1:
-			
+		{
+			admin a1("bilal", "0000");
 			break;
-
+		}
 		case 2:
-			
-			break;
+		{	
 
+			break;
+		}
 		case 3:
-			
+		{	
 			break;
-
+		}
 		default:
 			cerr << "Enter a vaild choice...\n";
 			break;
